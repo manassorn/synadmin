@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>Synadmin - Bootstrap4 Admin Template</title>
+	<!--favicon-->
+	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+	<!-- loader-->
+	<link href="assets/css/pace.min.css" rel="stylesheet" />
+	<script src="assets/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<!-- Icons CSS -->
+	<link rel="stylesheet" href="assets/css/icons.css" />
+	<!-- App CSS -->
+	<link rel="stylesheet" href="assets/css/app.css" />
+	<link rel="stylesheet" href="assets/css/dark-style.css" />
+</head>
+
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<div class="card shadow-none bg-transparent">
+			<img src="assets/images/errors-images/coming-soon-2.png" class="img-fluid" alt="" />
+			<div class="card-body text-center">
+				<h1 class="display-4 mt-5">We are Launching Soon!</h1>
+				<p>We are currently working hard on this page. Subscribe our newsletter
+					<br>to get update when it'll be live.</p>
+				<div class="row">
+					<div class="col-12 col-lg-4 mx-auto">
+						<form class="">
+							<div class="form-group mb-0">
+								<div class="input-group input-group-lg">
+									<input type="text" class="form-control" placeholder="Enter Your Email" />
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="button"><i class='bx bx-right-arrow-alt'></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</form>
+						<h4 class="mt-3">Follow Us :</h4>
+						<div class="error-social mt-3"> <a href="javaScript:;" class="bg-facebook"><i class='bx bxl-facebook'></i></a>
+							<a href="javaScript:;" class="bg-twitter"><i class='bx bxl-twitter'></i></a>
+							<a href="javaScript:;" class="bg-google"><i class='bx bxl-google'></i></a>
+							<a href="javaScript:;" class="bg-linkedin"><i class='bx bxl-linkedin'></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end wrapper -->
+	
+	<!--start switcher-->
+	   <div class="switcher-wrapper">
+	       <div class="switcher-btn">
+		       <i class='bx bx-cog bx-spin'></i>
+		   </div>
+		   <div class="switcher-body">
+		      <h5 class="mb-0 text-uppercase">Theme Customizer</h5>
+			  <hr/>
+			  <h6 class="mb-0">Theme Styles</h6>
+			  <hr/>
+			  <div class="custom-control custom-radio">
+				  <input type="radio" id="darkmode" name="customRadio" class="custom-control-input">
+				  <label class="custom-control-label" for="darkmode">Dark Mode</label>
+			  </div>
+			  <hr/>
+			  <div class="custom-control custom-radio">
+			    <input type="radio" id="lightmode" name="customRadio" checked class="custom-control-input">
+			    <label class="custom-control-label" for="lightmode">Light Mode</label>
+			  </div>
+		   </div>
+	   </div>
+	 <!--end switcher-->
+	
+	<!-- JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script>
+	  /*switcher*/
+	
+		$(".switcher-btn").on("click", function () {
+			$(".switcher-wrapper").toggleClass("switcher-toggled");
+		});
+		
+		$("#darkmode").on("click", function () {
+			$("html").addClass("dark-theme");
+		});
+		
+		$("#lightmode").on("click", function () {
+			$("html").removeClass("dark-theme");
+		});
+	</script> 
+</body>
+
+</html>
