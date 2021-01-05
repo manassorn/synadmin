@@ -359,12 +359,12 @@
         ไม่ถูกต้อง 
       </div> 
       <div class="form-inline mt-2 mb-3 justify-content-center"> 
-       <input type="text" class="form-control form-control-lg mr-1" style="width:50px"> 
-       <input type="text" class="form-control form-control-lg mr-1" style="width:50px"> 
-       <input type="text" class="form-control form-control-lg mr-1" style="width:50px"> 
-       <input type="text" class="form-control form-control-lg mr-1" style="width:50px"> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px"> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px"> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px"> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px"> 
       </div> 
-      <button type="button" class="btn btn-primary btn-lg btn-block">ยืนยัน</button> 
+      <button id="submit-btn" type="button" class="btn btn-primary btn-lg btn-block">ยืนยัน</button> 
       <a href="authentication-login.html" class="btn btn-link btn-block">ไม่ได้รับโค้ด?</a> 
      </div> 
     </div> 
@@ -383,7 +383,24 @@
   <script src="assets/js/app.js"></script>
   <script>
 
-		$("#lightmode").on("click", function () {
+    $('input').on('keyup', function(e) {
+      $this = $(this)
+      if ($this.val().length > 0) {
+        $this.next('input').focus()
+      }
+    })
+    $("input").keydown(function(event) {
+
+    var isBackspaceOrDelete = event.keyCode === 8 || event.keyCode === 46;
+      $this = $(this)
+
+    if (isBackspaceOrDelete && $this.val().length == 0) {
+        $this.prev('input').focus()
+        $this.prev('input').val('')
+
+    }
+});
+		$("#submit-btn").on("click", function () {
 			$("html").removeClass("dark-theme");
 		});
 	</script> 
