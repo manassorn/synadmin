@@ -424,9 +424,9 @@
 		$("#verify-btn").on("click", function() {
 			var jqxhr = $.post( "http://178.128.93.245/api/verification/email", {email:$("#email").val()}, function() {
 				location.href = "register2.html"
-			})
+			},'json')
 			.fail(function(xhr, error) {
-				console.error( "error", xhr, eror );
+				console.error( "error", xhr, error );
 				alert("error")
 			})
 		})
