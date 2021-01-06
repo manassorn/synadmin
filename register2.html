@@ -384,7 +384,6 @@
   <!-- App JS -->
   <script src="assets/js/app.js"></script>
   <script>
-
     $('input').on('keyup', function(e) {
       $this = $(this)
       if ($this.val().length > 0) {
@@ -393,18 +392,36 @@
     })
     $("input").keydown(function(event) {
 
-    var isBackspaceOrDelete = event.keyCode === 8 || event.keyCode === 46;
+      var isBackspaceOrDelete = event.keyCode === 8 || event.keyCode === 46;
       $this = $(this)
 
-    if (isBackspaceOrDelete && $this.val().length == 0) {
+      if (isBackspaceOrDelete && $this.val().length == 0) {
         $this.prev('input').focus()
         $this.prev('input').val('')
 
-    }
-});
-		$("#submit-btn").on("click", function () {
-			$("html").removeClass("dark-theme");
-		});
+      }
+    });
+
+		$("#submit-btn").on("click", function() {
+		  var code = $('input').map(function(){
+		  return $(this).val();
+		  }).get().join('')
+		  alert(code)
+		  var jqxhr = $.post( "http://178.128.93.245:3000/api/verification/email/verify", {email:'manassorn@gmail.com',code: code}, function(data) {
+		  console.log(data)
+		  if(data.data.verifyPassed === true) {
+		    location.href = "register2.html"
+		  } else {
+		    alert('not passed')
+		  }
+		
+		  },'json')
+		  .fail(function(xhr, error) {
+		   console.error( "error", xhr, error );
+		    alert("error")
+		  })
+		})
+		
 	</script> 
  </body>
 </html>

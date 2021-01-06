@@ -384,11 +384,11 @@
   <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
   <!-- App JS -->
   <script src="assets/js/app.js"></script>
-
+location.href = "register2.html"
   <script>
 
 		$("#submit-btn").on("click", function() {
-			var jqxhr = $.post( "http://178.128.93.245:3000/api/verification/email", {email:$("#email").val()}, function() {
+			var jqxhr = $.post( "http://178.128.93.245:3000/api/verification/email/create", {email:$("#email").val()}, function() {
 				location.href = "register2.html"
 			},'json')
 			.fail(function(xhr, error) {
