@@ -35,11 +35,11 @@
 
       <div class="form-group mt-2"> 
        <label>อีเมล</label> 
-       <input type="email" class="form-control form-control-lg" placeholder="example@user.com" required> 
+       <input id="email" type="email" class="form-control form-control-lg" placeholder="example@user.com" required> 
       </div> 
       <div class="form-group mt-2"> 
        <label>รหัสผ่าน</label> 
-       <input type="password" class="form-control form-control-lg" placeholder="" required> 
+       <input id="password" type="password" class="form-control form-control-lg" placeholder="" required> 
        <div class="invalid-feedback">
         กรุณากรอกรหัสผ่าน
        </div> 
@@ -79,7 +79,11 @@
 		  var email = $('#email').val()
 		  var password = $('#password').val()
 		  var jqxhr = $.post( "http://178.128.93.245:3000/api/user/login", {email,password}, function(data) {
-		  location.href = 'user1.html'
+		    if (data.error) {
+		      $('.alert').removeClass('d-none')
+		    } else {
+		      location.href = 'user1.html'
+		    }
 		
 		  },'json')
 		  .fail(function(xhr, error) {
