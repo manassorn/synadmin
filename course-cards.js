@@ -14,15 +14,15 @@ class CourseCards extends React.Component {
 
   render() {
     const card = <div class="col-6 col-md-3">
-        <div class="card" style="box-shadow: none"> 
-         <img class="card-img-top rounded rounded-lg" src="assets/images/avatars/avatar-1.png" alt="Card image cap" style=""/> 
+        <div class="card" style={{'box-shadow':'none'}}> 
+         <img class="card-img-top rounded rounded-lg" src="assets/images/avatars/avatar-1.png" alt="Card image cap"/> 
          <div class="card-body p-0"> 
-          <p class="card-text">trigonemito</p> 
+          <p class="card-text">trigonemitxxxo</p> 
          </div> 
         </div> 
        </div> ;
-    const cards = [card, card]
-    return {cards}
+    const cards = [card, card, card, card]
+    return cards
   }
 }
 
