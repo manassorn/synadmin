@@ -1,0 +1,167 @@
+<html lang="en">
+ <head> 
+  <!-- Required meta tags --> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <title>Synadmin - Bootstrap4 Admin Template</title> 
+  <!--favicon--> 
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png"> 
+  <!--plugins--> 
+  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"> 
+  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet"> 
+  <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet"> 
+  <!-- loader--> 
+  <link href="assets/css/pace.min.css" rel="stylesheet"> 
+  <!-- Bootstrap CSS --> 
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css"> 
+  <!-- Icons CSS --> 
+  <link rel="stylesheet" href="assets/css/icons.css"> 
+  <!-- App CSS --> 
+  <link rel="stylesheet" href="assets/css/app.css"> 
+  <link rel="stylesheet" href="assets/css/dark-style.css"> 
+ </head> 
+ <body class=""> 
+  <!-- wrapper --> 
+  <div class="wrapper"> 
+   <!--header--> 
+   <div id="navbar"></div>
+   <!--end header--> 
+   <!--page-wrapper--> 
+   <div class="page-wrapper">
+    <!--page-content-wrapper--> 
+    <div class="page-content-wrapper"> 
+     <div class="p-3 text-center border-bottom mb-3" style="background:white"> 
+      <h3 class="mb-0">สร้างคอร์ส</h3>
+     </div> 
+     <div class="container" style="max-width:720px">
+       
+             
+      <form class="needs-validation" novalidate>
+
+      <div class="form-group mt-2"> 
+       <label>ชื่อคอร์ส</label> 
+       <input id="name" type="text" class="form-control" placeholder="พิมพ์ชื่อคอร์ส"> 
+      </div> 
+      <div class="form-group mt-2"> 
+       <label>รายละเอียด</label> 
+       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="เล่าเนื้อหาให้ฟังหน่อยค่ะ"></textarea>
+  
+      </div> 
+      <div class="form-group mt-2"> 
+       <label>ราคา</label> 
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="พิมพ์ราคา" aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">บาทต่อชั่วโมง</span>
+          </div>
+        </div>
+       
+      </div> 
+
+      <div class="form-group mt-2"> 
+       <label>หมวดหมู่</label> 
+        <select id="inputState" class="form-control">
+          <option selected>เลือก...</option>
+          <option>...</option>
+        </select>
+       
+      </div> 
+      
+      <div class="mt-4 pt-4 border-top mb-3">
+          <h5>วัน-เวลา ที่สะดวก</h5>
+        </div>
+      <div class="row flex-nowrap">
+        <div class="col-3"> </div>
+        <div class="col-1 m-1 p-0 text-center font-weight-bold">จ</div>
+        <div class="col-1 m-1 p-0 text-center font-weight-bold">อ</div>
+        <div class="col-1 m-1 p-0 text-center font-weight-bold">พ</div>
+        <div class="col-1 m-1 p-0 text-center font-weight-bold">พฤ</div>
+        <div class="col-1 m-1 p-0 text-center font-weight-bold">ศ</div>
+        <div class="col-1 m-1 p-0 text-center font-weight-bold">ส</div>
+        <div class="col-1 m-1 p-0 text-center font-weight-bold">อ</div>
+      </div>
+      <div class="row flex-nowrap">
+        <div class="col-3">ช่วงเช้า<br>00:00-06:00</div>
+        <div class="col-1 rounded m-1 bg-light"> </div>
+        <div class="col-1 rounded m-1 bg-light"> </div>
+        <div class="col-1 rounded m-1 bg-light"> </div>
+        <div class="col-1 rounded m-1 bg-light"> </div>
+        <div class="col-1 rounded m-1 bg-light"> </div>
+        <div class="col-1 rounded m-1 bg-light"> </div>
+        <div class="col-1 rounded m-1 bg-light"> </div>
+      </div>
+      <div class="row flex-nowrap">
+        <div class="col-3">ช่วงเช้า<br>00:00-06:00</div>
+        <div class="col-1 rounded m-1 bg-light"> </div>
+        <div class="col-1 rounded m-1 bg-light"> </div>
+        <div class="col-1 rounded m-1 bg-light"> </div>
+        <div class="col-1 rounded m-1 bg-light"> </div>
+        <div class="col-1 rounded m-1 bg-light"> </div>
+        <div class="col-1 rounded m-1 bg-light"> </div>
+        <div class="col-1 rounded m-1 bg-light" data-toggle="modal" data-target="#exampleModalCenter"> </div>
+      </div>
+      
+      
+      <button id="submit-profile-btn" type="button" class="btn btn-primary btn-lg btn-block mt-4">สร้างคอร์ส</button> 
+      </form>
+
+
+     </div> 
+    </div> 
+    <!--end page-content-wrapper--> 
+   </div> 
+   <!--end page-wrapper--> 
+   <!--start overlay--> 
+   <div class="overlay toggle-btn-mobile"></div> 
+   <!--end overlay--> 
+   <!--Start Back To Top Button--> 
+   <a href="javaScript:;" class="back-to-top"><i class="bx bxs-up-arrow-alt"></i></a> 
+   <!--End Back To Top Button-->
+  </div> 
+  <!-- end wrapper --> 
+  <!-- JavaScript --> 
+  <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+    <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!--plugins-->
+  <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+  <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+  <!-- App JS -->
+  <script src="assets/js/app.js"></script>
+  
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script type="text/babel" src="navbar.js"></script>
+
+  <!--plugins--> 
+  <!-- App JS --> 
+  
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">เลือกเวลาที่สะดวก</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="pt-2 pb-2 mb-2 font-weight-bold">จันทร์</div>
+          <div class="bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">00:00</div>
+          <div class="bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">01:00</div>
+          <div class="bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">02:00</div>
+          <div class="bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">03:00</div>
+          <div class="bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">04:00</div>
+          <div class="bg-light rounded pl-4 pr-4 pt-2 pb-2">05:00</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary btn-block">บันทึก</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ </body>
+</html>
