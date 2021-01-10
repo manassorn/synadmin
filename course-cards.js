@@ -17,7 +17,10 @@ class CourseCards extends React.Component {
         <div class="card" style={{'box-shadow':'none'}}> 
          <img class="card-img-top rounded rounded-lg" src="assets/images/avatars/avatar-1.png" alt="Card image cap"/> 
          <div class="card-body p-0"> 
-          <p class="card-text">trigonemitxxxo</p> 
+          <p class="card-text">
+          <a href="course.html" className="stretched-link text-dark">รับสอนคณิตศาสตร์</a><br/>
+          ราคา <b>฿100/ชั่วโมง</b>
+          </p> 
          </div> 
         </div> 
        </div> ;
