@@ -46,28 +46,30 @@
        <label>รายละเอียด</label> 
        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="เล่าเนื้อหาให้ฟังหน่อยค่ะ"></textarea>
   
-      </div> 
-      <div class="form-group mt-2"> 
-       <label>ราคา</label> 
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="พิมพ์ราคา" aria-label="Recipient's username" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <span class="input-group-text" id="basic-addon2">บาทต่อชั่วโมง</span>
-          </div>
-        </div>
-       
-      </div> 
+      </div>
+      <div class="row">
+          <div class="form-group col-md-6">
+              <label>ราคา</label>
+              <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="พิมพ์ราคา" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                      <span class="input-group-text" id="basic-addon2">บาทต่อชั่วโมง</span>
+                  </div>
+              </div>
 
-      <div class="form-group mt-2"> 
-       <label>หมวดหมู่</label> 
-        <select id="inputState" class="form-control">
-          <option selected>เลือก...</option>
-          <option>...</option>
-        </select>
-       
-      </div> 
+          </div>
+
+          <div class="form-group col-md-6">
+              <label>หมวดหมู่</label>
+              <select id="inputState" class="form-control">
+                  <option selected>เลือกหมวดหมู่...</option>
+                  <option>...</option>
+              </select>
+
+          </div>
+      </div>
       
-      <div class="mt-4 pt-4 border-top mb-3">
+      <div class="pt-4 border-top mb-3">
           <h5>วัน-เวลา ที่สะดวก</h5>
         </div>
       <div class="row flex-nowrap">
@@ -82,23 +84,23 @@
       </div>
       <div class="row flex-nowrap">
         <div class="col-3">ช่วงเช้า<br>00:00-06:00</div>
-        <div class="col-1 rounded m-1 bg-light"> </div>
-        <div class="col-1 rounded m-1 bg-light"> </div>
-        <div class="col-1 rounded m-1 bg-light"> </div>
-        <div class="col-1 rounded m-1 bg-light"> </div>
-        <div class="col-1 rounded m-1 bg-light"> </div>
-        <div class="col-1 rounded m-1 bg-light"> </div>
-        <div class="col-1 rounded m-1 bg-light"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light"> </div>
       </div>
       <div class="row flex-nowrap">
         <div class="col-3">ช่วงเช้า<br>00:00-06:00</div>
-        <div class="col-1 rounded m-1 bg-light"> </div>
-        <div class="col-1 rounded m-1 bg-light"> </div>
-        <div class="col-1 rounded m-1 bg-light"> </div>
-        <div class="col-1 rounded m-1 bg-light"> </div>
-        <div class="col-1 rounded m-1 bg-light"> </div>
-        <div class="col-1 rounded m-1 bg-light"> </div>
-        <div class="col-1 rounded m-1 bg-light" data-toggle="modal" data-target="#exampleModalCenter"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light"> </div>
+        <div class="period-of-time col-1 rounded m-1 bg-light" data-toggle="modal" data-target="#exampleModalCenter"> </div>
       </div>
       
       
@@ -136,8 +138,21 @@
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
   <script type="text/babel" src="navbar.js"></script>
 
+
   <!--plugins--> 
-  <!-- App JS --> 
+  <!-- App JS -->
+  <style>
+      .period-of-time, .hour {
+          cursor: pointer;
+          border: solid 1px rgba(0,0,0,0);
+      }
+      .period-of-time:hover, .hour:hover {
+          border: solid 1px #28a745;
+      }
+      .hour.selected {
+          background-color: #28a745 !important;
+      }
+  </style>
   
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -150,12 +165,12 @@
         </div>
         <div class="modal-body">
           <div class="pt-2 pb-2 mb-2 font-weight-bold">จันทร์</div>
-          <div class="bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">00:00</div>
-          <div class="bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">01:00</div>
-          <div class="bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">02:00</div>
-          <div class="bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">03:00</div>
-          <div class="bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">04:00</div>
-          <div class="bg-light rounded pl-4 pr-4 pt-2 pb-2">05:00</div>
+          <div class="hour bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">00:00</div>
+          <div class="hour bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">01:00</div>
+          <div class="hour bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">02:00</div>
+          <div class="hour bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">03:00</div>
+          <div class="hour bg-light rounded pl-4 pr-4 pt-2 pb-2 mb-2">04:00</div>
+          <div class="hour bg-light rounded pl-4 pr-4 pt-2 pb-2">05:00</div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-primary btn-block">บันทึก</button>
@@ -163,5 +178,12 @@
       </div>
     </div>
   </div>
+
+
+  <script>
+      $('.hour').on('click', function() {
+          $(this).toggleClass('selected')
+      })
+  </script>
  </body>
 </html>
