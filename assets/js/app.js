@@ -1,3 +1,5 @@
+var API_HOST = 'http://178.128.93.245:3000';
+
 $(function () {
 	"use strict";
 	// search bar
