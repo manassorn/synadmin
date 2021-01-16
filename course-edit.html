@@ -117,8 +117,7 @@
   <!--plugins--> 
   <!-- App JS --> 
   <script>
-  var id = location.hash.substring(1)
-  alert(id)
+    var id = location.hash.substring(1)
     var jqxhr = $.get( API_HOST + "/api/crud/course/" + id, function(data) {
       var course = data.data
       $('#title').html(course.title)

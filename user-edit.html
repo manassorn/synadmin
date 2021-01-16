@@ -29,7 +29,10 @@
    <!--page-wrapper--> 
    <div class="page-wrapper">
     <!--page-content-wrapper--> 
-    <div class="page-content-wrapper"> 
+    <div class="page-content-wrapper">
+      
+      
+    <div id="display-section">
      <div class="p-3 text-center" style="background:white"> 
       <h3 class="mb-0">แก้ไขโปรไฟล์</h3> 
      </div> 
@@ -47,7 +50,7 @@
            <h6 class="mb-0 text-muted">อีเมล</h6> 
            <b>manassorn@gmail.com</b> 
           </div> 
-          <a href="#">แก้ไข</a> 
+          <a href="javascript:void(0)" field="email" class="edit-link">แก้ไข</a> 
          </div> 
         </div> 
         <div class="border-bottom pt-3 pb-3"> 
@@ -56,7 +59,7 @@
           <div> 
            <h6 class="mb-0 text-muted">รหัสผ่าน</h6> 
           </div> 
-          <a href="#">แก้ไข</a> 
+          <a href="javascript:;" field="password" class="edit-link">แก้ไข</a> 
          </div> 
         </div> 
         <div class="pt-3 pb-3"> 
@@ -66,20 +69,123 @@
            <h6 class="mb-0 text-muted">Skype ID</h6> 
            <b>manassorn</b> 
           </div> 
-          <a href="#">แก้ไข</a> 
+          <a href="javascript:;" field="skype-id" class="edit-link">แก้ไข</a> 
          </div> 
          <div class="d-flex justify-content-between"> 
           <div> 
            <h6 class="mb-0 text-muted">Google ID</h6> 
            <b>manassorn</b> 
           </div> 
-          <a href="#">แก้ไข</a> 
+          <a href="javascript:;" field="zoom-id" class="edit-link">แก้ไข</a> 
          </div> 
         </div> 
        </div> 
       </div> 
      </div> 
+
+      
+      
+      
+    </div>
+     
+    <div id="edit-email-section" class="d-none">
+      <div class="p-3 d-flexx align-items-center justify-content-between text-center" style="position:relative"> 
+      <a href="javascript:history.back()" style="position:absolute;left:15px;top:8px">
+        <i class="bx bx-chevron-left text-dark" style="font-size: 36px"/>
+      </a>
+      <h3 class="mb-0">แก้ไขอีเมล</h3> 
+
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       <form> 
+        <div class="form-group"> 
+         <label for="exampleFormControlInput1">อีเมล</label> 
+         <input type="email" class="form-control" id="email" placeholder="พิมพ์อีเมล"> 
+        </div> 
+        <button type="submit" class="btn btn-primary btn-block mb-2"> บันทึก</button> 
+       </form> 
+      </div> 
+     </div> 
+
+    </div>
+
+    <div id="edit-password-section" class="d-none">
+      <div class="p-3 text-center" style="background:white"> 
+      <h3 class="mb-0">แก้ไขรหัสผ่าน</h3> 
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+        <div class="alert alert-danger d-none1" role="alert">
+          ไม่ถูกต้อง
+        </div>
+       <form> 
+        <div class="form-group"> 
+         <label for="password">รหัสผ่านเดิม</label> 
+         <input type="password" class="form-control" id="current-password" > 
+        </div> 
+        
+        <div class="form-group"> 
+         <label for="password">รหัสผ่านใหม่</label> 
+         <input type="password" class="form-control" id="password"> 
+        </div> 
+        
+        <div class="form-group"> 
+         <label for="confirm-password">ยืนยันรหัสผ่าน</label> 
+         <input type="password" class="form-control" id="confirm-password" > 
+        </div> 
+
+        
+        <button type="submit" class="btn btn-primary btn-block mb-2"> บันทึก</button> 
+       </form> 
+      </div> 
+     </div> 
+
+    </div>
+
+    <div id="edit-skype-id-section" class="d-none">
+      <div class="p-3 text-center" style="background:white"> 
+      <h3 class="mb-0">แก้ไข Skype ID</h3> 
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       <form> 
+        <div class="form-group"> 
+         <label for="skype-id">Skype ID</label> 
+         <input type="text" class="form-control" id="skype-id" placeholder="พิมพ์ Skype ID"> 
+        </div> 
+        <button type="submit" class="btn btn-primary btn-block mb-2"> บันทึก</button> 
+       </form> 
+      </div> 
+     </div> 
+
+    </div>
+
+    <div id="edit-zoom-id-section" class="d-none">
+      <div class="p-3 text-center" style="background:white"> 
+      <h3 class="mb-0">แก้ไข Zoom ID</h3> 
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       <form> 
+        <div class="form-group"> 
+         <label for="zoom-id">Zoom ID</label> 
+         <input type="text" class="form-control" id="zoom-id" placeholder="พิมพ์ Zoom ID"> 
+        </div> 
+        <button type="submit" class="btn btn-primary btn-block mb-2"> บันทึก</button> 
+       </form> 
+      </div> 
+     </div> 
+
+    </div>
+
+     
+     
     </div> 
+    
+    
+    
+    
     <!--end page-content-wrapper--> 
    </div> 
    <!--end page-wrapper--> 
@@ -111,8 +217,26 @@
   <!--plugins--> 
   <!-- App JS --> 
   <script>
-  console.log(location.hash)
-  alert(location.hash)
+  window.onhashchange = () => {
+    var hash = window.location.hash
+    $('#display-section').addClass('d-none')
+    $('#edit-email-section').addClass('d-none')
+    $('#edit-password-section').addClass('d-none')
+    $('#edit-zoom-id-section').addClass('d-none')
+    $('#edit-skype-id-section').addClass('d-none')
+    
+    if(hash != '') {
+      var field = hash.substring(1)
+      $('#edit-' + field + '-section').removeClass('d-none')
+    } else {
+      $('#display-section').removeClass('d-none')
+    }
+  }
+    $('.edit-link').click(function(){
+      var field = $(this).attr('field')
+      location.hash = field
+    })
+    
   </script>
  </body>
 </html>
