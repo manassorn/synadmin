@@ -237,6 +237,14 @@
       location.hash = field
     })
     
+    var jqxhr = $.get( API_HOST + "/api/crud/user/hNqOKzYwhJjZTIDLUkf5", function(data) {
+      var user = data.data
+      $('#email').val(user.email)
+    },'json')
+    .fail(function(xhr, error) {
+      console.error( "error", xhr, error );
+      alert("error")
+    })
   </script>
  </body>
 </html>
