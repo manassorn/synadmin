@@ -48,35 +48,45 @@
          <div class="d-flex justify-content-between"> 
           <div> 
            <h6 class="mb-0 text-muted">อีเมล</h6> 
-           <b>manassorn@gmail.com</b> 
+           <b id="email-display">.</b> 
           </div> 
-          <a href="javascript:void(0)" field="email" class="edit-link">แก้ไข</a> 
+          <a href="javascript:void(0)" edit-section="edit-email-section" class="edit-link">แก้ไข</a> 
          </div> 
+        <div class="d-flex justify-content-between"> 
+          <div> 
+           <h6 class="mb-0 text-muted">ชื่อ</h6> 
+           <b id="name-display">.</b> 
+          </div> 
+          <a href="javascript:void(0)" edit-section="edit-name-section" class="edit-link">แก้ไข</a> 
+         </div> 
+
         </div> 
         <div class="border-bottom pt-3 pb-3"> 
          <h6>ความปลอดภัย</h6> 
          <div class="d-flex justify-content-between"> 
           <div> 
            <h6 class="mb-0 text-muted">รหัสผ่าน</h6> 
+           <b>********</b>
           </div> 
-          <a href="javascript:;" field="password" class="edit-link">แก้ไข</a> 
+          <a href="javascript:;" edit-section="edit-password-section" class="edit-link">แก้ไข</a> 
          </div> 
         </div> 
+
         <div class="pt-3 pb-3"> 
          <h6>ช่องทางการเรียนการสอน</h6> 
          <div class="d-flex justify-content-between"> 
           <div> 
            <h6 class="mb-0 text-muted">Skype ID</h6> 
-           <b>manassorn</b> 
+           <b id="skype-id-display">.</b> 
           </div> 
-          <a href="javascript:;" field="skype-id" class="edit-link">แก้ไข</a> 
+          <a href="javascript:;" edit-section="edit-skype-id-section" class="edit-link">แก้ไข</a> 
          </div> 
          <div class="d-flex justify-content-between"> 
           <div> 
-           <h6 class="mb-0 text-muted">Google ID</h6> 
-           <b>manassorn</b> 
+           <h6 class="mb-0 text-muted">Zoom ID</h6> 
+           <b id="zoom-id-display">.</b> 
           </div> 
-          <a href="javascript:;" field="zoom-id" class="edit-link">แก้ไข</a> 
+          <a href="javascript:;" edit-section="edit-zoom-id-section" class="edit-link">แก้ไข</a> 
          </div> 
         </div> 
        </div> 
@@ -101,7 +111,7 @@
        <form> 
         <div class="form-group"> 
          <label for="exampleFormControlInput1">อีเมล</label> 
-         <input type="email" class="form-control" id="email" placeholder="พิมพ์อีเมล"> 
+         <input type="email" class="form-control" id="email-input" placeholder="พิมพ์อีเมล"> 
         </div> 
         <button type="submit" class="btn btn-primary btn-block mb-2"> บันทึก</button> 
        </form> 
@@ -109,6 +119,29 @@
      </div> 
 
     </div>
+
+    <div id="edit-name-section" class="d-none">
+      <div class="p-3 d-flexx align-items-center justify-content-between text-center" style="position:relative"> 
+      <a href="javascript:history.back()" style="position:absolute;left:15px;top:8px">
+        <i class="bx bx-chevron-left text-dark" style="font-size: 36px"/>
+      </a>
+      <h3 class="mb-0">แก้ไขชื่อ</h3> 
+
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       <form> 
+        <div class="form-group"> 
+         <label for="name">ชื่อ</label> 
+         <input type="text" class="form-control" id="name-input" placeholder="พิมพ์ชื่อ"> 
+        </div> 
+        <button type="submit" class="btn btn-primary btn-block mb-2" field="name" input="#name-input" display="#name-display"> บันทึก</button> 
+       </form> 
+      </div> 
+     </div> 
+
+    </div>
+
 
     <div id="edit-password-section" class="d-none">
       <div class="p-3 text-center" style="background:white"> 
@@ -152,9 +185,9 @@
        <form> 
         <div class="form-group"> 
          <label for="skype-id">Skype ID</label> 
-         <input type="text" class="form-control" id="skype-id" placeholder="พิมพ์ Skype ID"> 
+         <input type="text" class="form-control" id="skype-id-input" placeholder="พิมพ์ Skype ID"> 
         </div> 
-        <button type="submit" class="btn btn-primary btn-block mb-2"> บันทึก</button> 
+        <button type="submit" class="btn btn-primary btn-block mb-2" field="skypeId" input="#skype-id-input" display="#skype-id-display"> บันทึก</button> 
        </form> 
       </div> 
      </div> 
@@ -170,9 +203,9 @@
        <form> 
         <div class="form-group"> 
          <label for="zoom-id">Zoom ID</label> 
-         <input type="text" class="form-control" id="zoom-id" placeholder="พิมพ์ Zoom ID"> 
+         <input type="text" class="form-control" id="zoom-id-input" placeholder="พิมพ์ Zoom ID"> 
         </div> 
-        <button type="submit" class="btn btn-primary btn-block mb-2"> บันทึก</button> 
+        <button type="submit" class="btn btn-primary btn-block mb-2" field="zoomId" input="#zoom-id-input" display="#zoom-id-display"> บันทึก</button> 
        </form> 
       </div> 
      </div> 
@@ -219,32 +252,62 @@
   <script>
   window.onhashchange = () => {
     var hash = window.location.hash
-    $('#display-section').addClass('d-none')
-    $('#edit-email-section').addClass('d-none')
-    $('#edit-password-section').addClass('d-none')
-    $('#edit-zoom-id-section').addClass('d-none')
-    $('#edit-skype-id-section').addClass('d-none')
+    $('[id$="section"]').addClass('d-none')
     
     if(hash != '') {
-      var field = hash.substring(1)
-      $('#edit-' + field + '-section').removeClass('d-none')
+      var editSection = hash
+      $(editSection).removeClass('d-none')
     } else {
       $('#display-section').removeClass('d-none')
     }
+    document.body.scrollTop = 0
   }
     $('.edit-link').click(function(){
-      var field = $(this).attr('field')
-      location.hash = field
+      var editSection = $(this).attr('edit-section')
+      location.hash = editSection
     })
     
-    var jqxhr = $.get( API_HOST + "/api/crud/user/hNqOKzYwhJjZTIDLUkf5", function(data) {
+    var id = location.hash.substring(1)
+    if(!id) id = 'hNqOKzYwhJjZTIDLUkf5'
+    var jqxhr = $.get( API_HOST + "/api/crud/user/" + id, function(data) {
       var user = data.data
-      $('#email').val(user.email)
+      $('#email-display').text(user.email)
+      $('#email-input').val(user.email)
+      $('#name-display').text(user.name)
+      $('#name-input').val(user.name)
+      $('#skype-id-display').text(user.skypeId || '-')
+      $('#skype-id-input').val(user.skypeId)
+      $('#zoom-id-display').text(user.zoomId || '-')
+      $('#zoom-id-input').val(user.zoomId)
+
     },'json')
     .fail(function(xhr, error) {
       console.error( "error", xhr, error );
       alert("error")
     })
+    
+    $('button').click(function(){
+      $this = $(this)
+      var field = $(this).attr('field')
+      var input = $(this).attr('input')
+      var value = $(input).val()
+      
+      var postData = {}
+      postData[field] = value
+
+      var jqxhr = $.post( API_HOST + "/api/crud/user/" + id, postData, function(data) {
+        var display = $this.attr('display')
+        $(display).text(value)
+        history.back()
+      },'json')
+      .fail(function(xhr, error) {
+        console.error( "error", xhr, error );
+        alert("error")
+      })
+      return false
+    })
+    
+    
   </script>
  </body>
 </html>
