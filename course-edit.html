@@ -98,10 +98,13 @@
      </div> 
      <div class="container" style="max-width:720px">
       <div class="border-top pt-3"> 
-       <form> 
+       <form class="needs-validation" novalidate> 
         <div class="form-group"> 
-         <label for="exampleFormControlInput1">ชื่อคอร์ส</label> 
-         <input type="text" class="form-control" id="title-input" placeholder="พิมพ์ชื่อคอร์ส"> 
+         <label for="title-input">ชื่อคอร์ส</label> 
+         <input type="text" class="form-control" id="title-input" placeholder="พิมพ์ชื่อคอร์ส" required>
+          <div class="invalid-feedback">
+          กรุณาพิมพ์ชื่อคอร์ส
+          </div>
         </div> 
         <button type="submit" class="btn btn-primary btn-block mb-2 save-btn" field="title" input="#title-input" display="#title-display"> บันทึก</button> 
        </form> 
@@ -121,14 +124,16 @@
      </div> 
      <div class="container" style="max-width:720px">
       <div class="border-top pt-3"> 
-       <form> 
+       <form class="needs-validation" novalidate> 
        
        
        
         <div class="form-group"> 
          <label for="exampleFormControlInput1">รายละเอียด</label>
           <textarea class="form-control" id="description-textarea" rows="3" placeholder="เล่าเนื้อหาให้ฟังหน่อยค่ะ" required></textarea>
-
+          <div class="invalid-feedback">
+            กรุณาพิมพ์รายละเอียด
+          </div>
         </div> 
         <button type="submit" class="btn btn-primary btn-block mb-2" field="description" input="#description-textarea" display="#description-display"> บันทึก</button> 
        </form> 
@@ -152,7 +157,7 @@
         <div class="form-group">
           <label>ราคา</label>
             <div class="input-group mb-3">
-              <input id="price-input" type="number" class="form-control" placeholder="พิมพ์ราคา" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+              <input id="price-input" type="number" class="form-control" placeholder="พิมพ์ราคา" aria-label="Recipient's username" aria-describedby="basic-addon2" step="1" required>
               <div class="input-group-append">
                 <span class="input-group-text" id="basic-addon2">บาทต่อชั่วโมง</span>
               </div>
@@ -233,11 +238,7 @@
     <script>
   window.onhashchange = () => {
     var hash = window.location.hash
-    $('#display-section').addClass('d-none')
-    $('#edit-title-section').addClass('d-none')
-    $('#edit-description-section').addClass('d-none')
-    $('#edit-price-section').addClass('d-none')
-    $('#edit-category-section').addClass('d-none')
+    $('[id$="-section"]').addClass('d-none')
     
     if(hash != '') {
       var field = hash.substring(1)
@@ -256,6 +257,12 @@
     var id = location.hash.substring(1)
     if(!id) id = 'VsNjEXN4IlJDwIDy4Pmt'
     $('button').click(function(){
+      var form = $(this).parent('form')[0]
+		  if (form.checkValidity() === false) {
+		    form.classList.add('was-validated');
+		    return false
+		  }
+      
       $this = $(this)
       var field = $(this).attr('field')
       var input = $(this).attr('input')

@@ -156,6 +156,9 @@
         <div class="form-group"> 
          <label for="password">รหัสผ่านเดิม</label> 
          <input type="password" class="form-control" id="current-password" > 
+         <div class="is-invalid d-none">
+           กรุณาพิมพ์รหัสผ่านเดิม
+         </div>
         </div> 
         
         <div class="form-group"> 
@@ -169,7 +172,7 @@
         </div> 
 
         
-        <button type="submit" class="btn btn-primary btn-block mb-2"> บันทึก</button> 
+        <button id="submit-password-btn"type="submit" class="btn btn-primary btn-block mb-2 custom-submit"> บันทึก</button> 
        </form> 
       </div> 
      </div> 
@@ -246,7 +249,7 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
   <script type="text/babel" src="navbarxxx.js"></script>
-  <script type="text/javascript" src="navbar2.js"></script>
+  <script type="text/javascript" src="navbar3.js"></script>
   <!--plugins--> 
   <!-- App JS --> 
   <script>
@@ -286,7 +289,7 @@
       alert("error")
     })
     
-    $('button').click(function(){
+    $('button:not(.custom-submit)').click(function(){
       $this = $(this)
       var field = $(this).attr('field')
       var input = $(this).attr('input')
@@ -305,6 +308,18 @@
         alert("error")
       })
       return false
+    })
+    
+    $('#submit-password-btn').click(function(){
+    val currentPassword = $('#current-password').val()
+    val newPassword1 = $('#new-password1').val()
+    val newPassword2 = $('#new-password2').val()
+    val currentPwdFeedback = currentPassword.next()
+    if (currentPassword == '') {
+    currentPwdFeedback.removeClass('d-none')
+    } else {
+    currentPwdFeedback.addClass('d-none')
+    }
     })
     
     
