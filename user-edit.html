@@ -155,8 +155,8 @@
        <form class="needs-validation" novalidate>
         <div class="form-group"> 
          <label for="password">รหัสผ่านเดิม</label> 
-         <input type="password" class="form-control" id="current-password" aria-describedby="validationServer03Feedback" required>
-         <div id="validationServer03Feedback" class="invalid-feedback">
+         <input type="password" class="form-control" id="current-password" aria-describedby="current-password-feedback" required>
+         <div id="current-password-feedback" class="invalid-feedback">
            กรุณาพิมพ์รหัสผ่านเดิม
          </div>
         </div> 
@@ -297,6 +297,7 @@
     })
     
     $('button:not(.custom-submit)').click(function(){
+      alert('x')
       $this = $(this)
       var field = $(this).attr('field')
       var input = $(this).attr('input')
@@ -321,6 +322,8 @@
      $(this).parent('form').addClass('was-validated')
 
      //reset
+     $('#current-password')[0].setCustomValidity("");
+     $('#current-password-feedback').text('กรุณาพิมพ์รหัสผ่านเดิม')
      $('#confirm-password')[0].setCustomValidity("");
      $('#confirm-password-feedback').text('กรุณาพิมพ์รหัสผ่านใหม่อย่างน้อย 8 ตัวอักษร')
 
@@ -339,14 +342,27 @@
      postData.newPassword = $('#password').val()
      var jqxhr = $.post( API_HOST + "/api/user/" + id + "/password", postData, function(data) {
       history.back()
+      $('#current-password').val('')
+      $('#password').val('')
+      $('#confirm-password').val('')
+      $('#edit-password-section form').removeClass('was-validated')
      },'json')
       .fail(function(xhr, error) {
-       $('#edit-password-section .alert').removeClass('d-none')
        console.error( "error", xhr, error );
+       if(xhr.responseJSON.error.message = "current password is incorrect") {
+        $('#current-password')[0].setCustomValidity("รหัสผ่านใหม่ไม่ตรงกัน");
+        $('#current-password').focus().select()
+        $('#current-password-feedback').text("รหัสผ่านเดิมไม่ถูกต้อง");
+       } else {
+        $('#edit-password-section .alert').removeClass('d-none')
+       }
       })
 
     })
 
+  $('#current-password').keyup(function() {
+   $('#edit-password-section form').removeClass('was-validated')
+  })
     
   </script>
  </body>
